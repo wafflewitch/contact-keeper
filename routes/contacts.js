@@ -81,7 +81,7 @@ router.put('/:id', auth, async (req, res) => {
     contact = await Contact.findByIdAndUpdate(
       req.params.id,
       { $set: contactFields },
-      { new: true }
+      { new: true } // This returns the new object instead of old.
     );
 
     res.json(contact);
