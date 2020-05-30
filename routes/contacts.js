@@ -81,7 +81,8 @@ router.put('/:id', auth, async (req, res) => {
     contact = await Contact.findByIdAndUpdate(
       req.params.id,
       { $set: contactFields },
-      { new: true } // This creates a new contact if a match is not found
+      { new: true },
+      { upsert: true } // This creates a new contact if a match is not found
     );
 
     res.json(contact);
