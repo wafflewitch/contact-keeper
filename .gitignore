@@ -1,6 +1,7 @@
 node_modules/
 
 .env
+/client/.envx
 /client/.env.local
 /client/.env.development.local
 /client/.env.test.local
