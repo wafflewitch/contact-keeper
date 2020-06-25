@@ -66,7 +66,28 @@ const AuthState = (props) => {
   };
 
   // Log in user
-  const logIn = () => console.log('logIn');
+  const logIn = async (formData) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    try {
+      const res = await axios.post('api/auth', formData, config);
+
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data, // this will become the token
+      });
+
+      loadUser();
+    } catch (err) {
+      dispatch({
+        payload: err.response.data.msg,
+      });
+    }
+  };
 
   // Log out user
   const logOut = () => console.log('logOut');
