@@ -87,6 +87,11 @@ const ContactState = (props) => {
     dispatch({ type: DELETE_CONTACT, payload: id });
   };
 
+  // Clear contacts
+  const clearContacts = () => {
+    dispatch({ type: CLEARS_CONTACTS });
+  };
+
   // Set current
   const setCurrent = (contact) => {
     dispatch({ type: SET_CURRENT, payload: contact });
@@ -118,6 +123,7 @@ const ContactState = (props) => {
         addContact,
         updateContact,
         deleteContact,
+        clearContacts,
         setCurrent,
         clearCurrent,
         filterContacts,
