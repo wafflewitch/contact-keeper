@@ -10,6 +10,7 @@ import {
   SET_ALERT,
   REMOVE_ALERT,
   GET_CONTACTS,
+  CLEARS_CONTACTS,
 } from '../types';
 
 export default (state, action) => {
@@ -41,6 +42,14 @@ export default (state, action) => {
           (contact) => contact._id !== action.payload
         ),
         loading: false,
+      };
+    case CLEARS_CONTACTS:
+      return {
+        ...state,
+        contacts: null,
+        filtered: null,
+        error: null,
+        current: null,
       };
     case CONTACT_ERROR:
       return {
