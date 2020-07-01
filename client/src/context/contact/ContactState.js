@@ -42,7 +42,7 @@ const ContactState = (props) => {
     //     type: 'professional',
     //   },
     // ],
-    contacts: [],
+    contacts: null,
     current: null,
     filtered: null,
     error: null,
