@@ -9,7 +9,7 @@ import {
   DELETE_CONTACT,
   CONTACT_ERROR,
   FILTER_CONTACTS,
-  CLEARS_CONTACTS,
+  CLEAR_CONTACTS,
   CLEAR_FILTER,
   SET_CURRENT,
   CLEAR_CURRENT,
@@ -109,7 +109,7 @@ const ContactState = (props) => {
 
   // Clear contacts
   const clearContacts = () => {
-    dispatch({ type: CLEARS_CONTACTS });
+    dispatch({ type: CLEAR_CONTACTS });
   };
 
   // Set current
